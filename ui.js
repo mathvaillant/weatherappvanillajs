@@ -1,7 +1,7 @@
 class UI {
   constructor() {
     this.city = document.querySelector('#w-city')
-    this.description = document.querySelector('#w-desc-short')
+    this.temp = document.querySelector('#w-temp')
     this.description = document.querySelector('#w-desc')
     this.icon = document.querySelector('#w-icon')
     this.humidity = document.querySelector('#w-humidity')
@@ -20,6 +20,7 @@ class UI {
     const iconAttr = `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
 
     this.city.innerHTML = `${weather.name}, ${weather.sys.country} <img src="https://www.countryflags.io/${weather.sys.country}/shiny/32.png">`
+    this.temp.textContent = `${weather.main.temp} C°`
     this.description.textContent = weather.weather[0].description
     this.icon.setAttribute('src', iconAttr)
     this.humidity.textContent = `Relative humidity: ${weather.main.humidity}%`
